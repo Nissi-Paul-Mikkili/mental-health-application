@@ -8,20 +8,29 @@
 body, html {
   height: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: #000; /* Set black background */
-  color: #ffd700; /* Set text color to yellow */
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Yellow text */
   line-height: 1.6;
-  background-image: url('/public/background.jpg'); /* Add background image */
+  background-image: url('/public/background.jpg'); /* Path to your background image in the public folder */
   background-size: cover;
   background-position: center;
 }
 
+/* Layout - Main App */
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+.container {
+  flex-grow: 1;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
 header {
   background-color: #000; /* Black background */
   padding: 1rem;
@@ -44,30 +53,105 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  text-decoration: underline;
   color: #ffcc00; /* Slightly different yellow on hover */
 }
 
 /* Footer Styles */
 footer {
-  background-color: #000;
-  color: #ffd700;
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Yellow text */
   text-align: center;
   padding: 1rem;
+  margin-top: auto;
 }
 
-h1, h2 {
-  color: #ffd700; /* Yellow headings */
-}
 
-.container {
-  flex-grow: 1;
-  width: 80%;
+
+/* Form Container for Login/Registration */
+.form-container {
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffd700; /* Yellow text */
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
 }
 
-/* Button Styles */
+.main-container {
+  display: flex;
+  justify-content: center; /* Centers the form horizontally */
+  align-items: center; /* Centers the form vertically */
+  height: calc(100vh - 70px); /* Full viewport height minus the header height */
+  padding-top: 70px; /* To avoid overlap with the navbar */
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ffd700; /* Yellow heading */
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-container input {
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ffd700; /* Yellow border */
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Yellow text */
+  border-radius: 5px;
+}
+
+.form-container input::placeholder {
+  color: #ffcc00;
+}
+
+.form-container button {
+  background-color: #ffd700; /* Yellow button */
+  color: #000; /* Black text */
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #000; /* Black button on hover */
+  color: #ffd700; /* Yellow text on hover */
+  border-radius: 50px; /* Rounded button shape on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.form-container .form-footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-container .form-footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.form-container .form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles (Global) */
 button {
   background-color: #ffd700; /* Yellow background */
   color: #000; /* Black text */
@@ -85,14 +169,14 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
-/* Form Input Styles */
+/* Input Styles (Global) */
 input, textarea {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  background-color: #000;
-  color: #ffd700;
-  border: 1px solid #ffd700;
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Yellow text */
+  border: 1px solid #ffd700; /* Yellow border */
   border-radius: 8px;
 }
 
@@ -102,6 +186,10 @@ input::placeholder, textarea::placeholder {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  .form-container{
+    padding: 1rem;
+  }
   .container {
     width: 100%;
     padding: 0 1rem;
@@ -109,5 +197,9 @@ input::placeholder, textarea::placeholder {
 
   header nav ul {
     flex-direction: column;
+  }
+
+  .form-container {
+    padding: 1rem;
   }
 }
