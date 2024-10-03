@@ -1,6 +1,6 @@
 /* Header.css */
 header {
-    background-color: #6200ea;
+    background-color: #000; /* Black background */
     padding: 1rem;
   }
   
@@ -11,7 +11,7 @@ header {
   }
   
   header nav ul li {
-    margin: 0 10px;
+    color: #ffd700; /* Yellow text */
   }
   
   header nav ul li a {
@@ -22,5 +22,6 @@ header {
   
   header nav ul li a:hover {
     text-decoration: underline;
+    color: #ffcc00;
   }
   

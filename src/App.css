@@ -5,11 +5,15 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
+  height: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: #000; /* Set black background */
+  color: #ffd700; /* Set text color to yellow */
   line-height: 1.6;
+  background-image: url('/public/background.jpg'); /* Add background image */
+  background-size: cover;
+  background-position: center;
 }
 
 .App {
@@ -18,9 +22,8 @@ body {
   min-height: 100vh;
 }
 
-/* Header Styles */
 header {
-  background-color: #6200ea;
+  background-color: #000; /* Black background */
   padding: 1rem;
 }
 
@@ -35,122 +38,66 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: #fff;
+  color: #ffd700; /* Yellow text */
   text-decoration: none;
   font-weight: bold;
 }
 
 header nav ul li a:hover {
   text-decoration: underline;
+  color: #ffcc00; /* Slightly different yellow on hover */
 }
 
 /* Footer Styles */
 footer {
-  background-color: #6200ea;
-  color: #fff;
+  background-color: #000;
+  color: #ffd700;
   text-align: center;
   padding: 1rem;
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
-/* Main Content Styles */
 h1, h2 {
-  color: #6200ea;
-}
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  color: #ffd700; /* Yellow headings */
 }
 
 .container {
+  flex-grow: 1;
   width: 80%;
   margin: 0 auto;
+  padding: 20px;
 }
 
-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form div {
-  margin-bottom: 1rem;
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-form input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #6200ea;
-  color: #fff;
+/* Button Styles */
+button {
+  background-color: #ffd700; /* Yellow background */
+  color: #000; /* Black text */
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-form button:hover {
-  background-color: #3700b3;
+button:hover {
+  background-color: #000; /* Black background on hover */
+  color: #ffd700; /* Yellow text on hover */
+  border-radius: 50px; /* Change shape on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
-/* Dashboard Styles */
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.card {
-  background-color: #fff;
-  padding: 2rem;
+/* Form Input Styles */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #000;
+  color: #ffd700;
+  border: 1px solid #ffd700;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
-.card h2 {
-  margin-bottom: 1rem;
-}
-
-.card p {
-  margin-bottom: 1rem;
-}
-
-.card button {
-  padding: 0.5rem 1rem;
-  background-color: #6200ea;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background-color: #3700b3;
+input::placeholder, textarea::placeholder {
+  color: #ffcc00;
 }
 
 /* Responsive */
