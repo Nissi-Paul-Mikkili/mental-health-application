@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import './Header.css';
 
 function Header({ userRole, isLoggedIn, handleLogout }) {
+
+  const navigate = useNavigate();
+
+  const handleLogoutAndRedirect = () => {
+    handleLogout();   // Call the logout handler from App.js
+    navigate('/login');  // Redirect to login page
+  };
+
   return (
     <header>
       <nav>
@@ -22,7 +30,7 @@ function Header({ userRole, isLoggedIn, handleLogout }) {
             {/* Show logout link when logged in */}
             {isLoggedIn && (
               <li>
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogoutAndRedirect}>Logout</button>
               </li>
             )}
         </ul>

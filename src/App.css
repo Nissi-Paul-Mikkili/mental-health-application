@@ -67,7 +67,7 @@ footer {
 
 
 
-/* Form Container for Login/Registration */
+/* Centering form-container */
 .form-container {
   width: 100%;
   max-width: 400px;
@@ -77,18 +77,15 @@ footer {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: #ffd700; /* Yellow text */
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%); /* Vertically center the form */
 }
 
 .main-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  height: calc(100vh - 70px); /* Full viewport height minus the header */
-  padding-top: 70px; /* Prevent overlap with header */
+  justify-content: center; /* Centers the form horizontally */
+  align-items: center; /* Centers the form vertically */
+  min-height: 100vh; /* Takes full viewport height */
 }
+
 
 .form-container h2 {
   text-align: center;

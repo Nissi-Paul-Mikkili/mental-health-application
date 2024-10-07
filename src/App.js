@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AdminDashboard from './Components/Admin/AdminDashboard' // Use your existing AdminDashboard component
 import UserDashboard from './Components/User/UserDashboard'   // Use your existing UserDashboard component
 import Login from './Components/Auth/Login'; // Use your existing Login component
@@ -10,6 +10,7 @@ import Footer from './Components/Layout/Footer';
 function App() {
   const [userRole, setUserRole] = useState(null);  // State for storing the user role (admin/user)
   const [isLoggedIn, setIsLoggedIn] = useState(false);  // State for login status
+  
 
   // Function to handle login and set the user role
   const handleLogin = (role) => {

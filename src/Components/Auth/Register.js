@@ -11,33 +11,35 @@ function Register() {
   };
 
   return (
-    <div className="form-container">
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-          />
+    <div className="main-container">
+      <div className="form-container">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Create a password"
+            />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+        <div className="form-footer">
+          <p>Already have an account? <a href="/login">Login</a></p>
+         </div>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Create a password"
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <div className="form-footer">
-        <p>Already have an account? <a href="/login">Login</a></p>
       </div>
-    </div>
   );
 }
 
