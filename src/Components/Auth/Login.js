@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate from react-router-dom
+import { useNavigate, Link } from 'react-router-dom'; // useNavigate from react-router-dom
 import '../../App.css'; // Correct CSS import
 
 function Login({ handleLogin }) {
@@ -48,7 +48,7 @@ function Login({ handleLogin }) {
           <button type="submit">Login</button>
         </form>
         <div className="form-footer">
-          <p>Don't have an account? <a href="/register">Register</a></p>
+        <p>Don't have an account? <Link to="/register">Register</Link></p>
         </div>
       </div>
     </div>
