@@ -72,22 +72,22 @@ footer {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.7); /* Black background */
+  background-color: rgba(0, 0, 0, 0.7); /* Translucent background */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: #ffd700; /* Yellow text */
   position: relative;
   top: 50%;
-  transform: translateY(50%);
+  transform: translateY(-50%); /* Vertically center the form */
 }
 
 .main-container {
   display: flex;
-  justify-content: center; /* Centers the form horizontally */
-  align-items: center; /* Centers the form vertically */
-  height: calc(100vh - 70px); /* Full viewport height minus the header height */
-  padding-top: 70px; /* To avoid overlap with the navbar */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: calc(100vh - 70px); /* Full viewport height minus the header */
+  padding-top: 70px; /* Prevent overlap with header */
 }
 
 .form-container h2 {
