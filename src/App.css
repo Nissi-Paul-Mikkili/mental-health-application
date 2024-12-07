@@ -1,202 +1,27 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: #000; /* Black background */
-  color: #ffd700; /* Yellow text */
-  line-height: 1.6;
-  background-image: url('/public/background.jpg'); /* Path to your background image in the public folder */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Layout - Main App */
-.App {
+.app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: linear-gradient(90deg, #f9f9f9, #e6f7ff);
 }
 
-.container {
-  flex-grow: 1;
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header Styles */
-header {
-  background-color: #000; /* Black background */
-  padding: 1rem;
-}
-
-header nav ul {
-  list-style: none;
+.navigation {
+  background: linear-gradient(90deg, #4a90e2, #4fbcff);
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
-header nav ul li {
-  margin: 0 10px;
-}
-
-header nav ul li a {
-  color: #ffd700; /* Yellow text */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header nav ul li a:hover {
-  color: #ffcc00; /* Slightly different yellow on hover */
-}
-
-/* Footer Styles */
-footer {
-  background-color: #000; /* Black background */
-  color: #ffd700; /* Yellow text */
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-}
-
-
-
-/* Centering form-container */
-.form-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.7); /* Translucent background */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  color: #ffd700; /* Yellow text */
-}
-
-.main-container {
-  display: flex;
-  justify-content: center; /* Centers the form horizontally */
-  align-items: center; /* Centers the form vertically */
-  min-height: 100vh; /* Takes full viewport height */
-}
-
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #ffd700; /* Yellow heading */
-}
-
-.form-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.form-container input {
-  padding: 0.75rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid #ffd700; /* Yellow border */
-  background-color: #000; /* Black background */
-  color: #ffd700; /* Yellow text */
-  border-radius: 5px;
-}
-
-.form-container input::placeholder {
-  color: #ffcc00;
-}
-
-.form-container button {
-  background-color: #ffd700; /* Yellow button */
-  color: #000; /* Black text */
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.form-container button:hover {
-  background-color: #000; /* Black button on hover */
-  color: #ffd700; /* Yellow text on hover */
-  border-radius: 50px; /* Rounded button shape on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
-}
-
-.form-container .form-footer {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.form-container .form-footer a {
+.nav-link {
   color: #ffd700;
-  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-.form-container .form-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Button Styles (Global) */
-button {
-  background-color: #ffd700; /* Yellow background */
-  color: #000; /* Black text */
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #000; /* Black background on hover */
-  color: #ffd700; /* Yellow text on hover */
-  border-radius: 50px; /* Change shape on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
-}
-
-/* Input Styles (Global) */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #000; /* Black background */
-  color: #ffd700; /* Yellow text */
-  border: 1px solid #ffd700; /* Yellow border */
-  border-radius: 8px;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #ffcc00;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-
-  .form-container{
-    padding: 1rem;
-  }
-  .container {
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  header nav ul {
-    flex-direction: column;
-  }
-
-  .form-container {
-    padding: 1rem;
-  }
+.logout-btn {
+  color: #ffd700;
+  background: none;
+  border: 2px solid #ffd700;
+  padding: 0.5rem 1rem;
 }

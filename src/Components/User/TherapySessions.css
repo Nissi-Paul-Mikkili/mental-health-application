@@ -1,0 +1,149 @@
+/* General container styling */
+.therapy-sessions-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f2fd, #f9f9f9);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Page title */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #4a90e2;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.schedule-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+/* Input and Dropdown Styling */
+input, select, .date-picker {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, .date-picker:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0px 0px 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Dropdown Styling */
+.dropdown {
+  appearance: none;
+  background: #f9f9f9 url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path d="M0 0h10L5 5z" fill="%234a90e2"/></svg>') no-repeat right 12px center;
+  background-size: 10px;
+}
+
+/* Schedule button */
+.schedule-btn {
+  background: #4a90e2;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.schedule-btn:hover {
+  background: #357ab8;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sessions list */
+.sessions-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a90e2;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sessions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.session-item {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .therapy-sessions-container {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .schedule-form {
+    gap: 10px;
+  }
+
+  input, select, .date-picker {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .schedule-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .sessions-list {
+    gap: 8px;
+  }
+
+  .session-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
