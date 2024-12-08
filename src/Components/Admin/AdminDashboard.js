@@ -1,48 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import Profile from '../User/Profile'; // Import the Profile component
+import ManageSessions from './ManageSessions'; // Import the ManageSessions component
+import ManageUsers from './ManageUsers'; // Import the ManageUsers component
+import './AdminDashboard.css';
 
 function AdminDashboard() {
-  const [sessions, setSessions] = useState([]);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [activeComponent, setActiveComponent] = useState('ManageSessions');
 
-  useEffect(() => {
-    const fetchSessions = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/api/sessions');
-        setSessions(response.data);
-      } catch (error) {
-        console.error('Error fetching sessions:', error);
-      }
-    };
-
-    fetchSessions();
-  }, []);
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'ManageSessions':
+        return <ManageSessions />;
+      case 'ManageUsers':
+        return <ManageUsers />;
+      case 'Profile':
+        return <Profile />;
+      default:
+        return <ManageSessions />;
+    }
+  };
 
   return (
-    <div className="container">
-      <h1>Admin Dashboard</h1>
-      <h2>Manage Therapy Sessions</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Therapist</th>
-            <th>Time</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sessions.map((session) => (
-            <tr key={session.id}>
-              <td>{session.id}</td>
-              <td>{session.therapistName}</td>
-              <td>{new Date(session.sessionTime).toLocaleString()}</td>
-              <td>
-                <button className='text-black'>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="dashboard-container">
+      <div className={`sidebar ${isSidebarVisible ? 'visible' : 'hidden'}`}>
+        <span
+          className={`toggle-symbol ${isSidebarVisible ? 'open' : 'closed'}`}
+          onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+        >
+          {isSidebarVisible ? '⟨' : '⟩'}
+        </span>
+        <h2 className="navbar-title">Admin Navigation</h2>
+        <ul>
+          <li
+            className={activeComponent === 'ManageSessions' ? 'active' : ''}
+            onClick={() => setActiveComponent('ManageSessions')}
+          >
+            Manage Sessions
+          </li>
+          <li
+            className={activeComponent === 'ManageUsers' ? 'active' : ''}
+            onClick={() => setActiveComponent('ManageUsers')}
+          >
+            Manage Users
+          </li>
+          <li
+            className={activeComponent === 'Profile' ? 'active' : ''}
+            onClick={() => setActiveComponent('Profile')}
+          >
+            Profile
+          </li>
+        </ul>
+      </div>
+      <div className={`main-content ${isSidebarVisible ? '' : 'expanded'}`}>
+        {renderComponent()}
+      </div>
     </div>
   );
 }

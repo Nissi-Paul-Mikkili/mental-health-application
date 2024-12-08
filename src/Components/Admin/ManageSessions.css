@@ -1,10 +1,5 @@
-.my-sessions-container {
-    max-width: 800px;
-    margin: 20px auto;
+.manage-sessions-container {
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
   }
   
@@ -14,21 +9,17 @@
     color: #4a90e2;
   }
   
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
   .sessions-table {
     width: 100%;
     border-collapse: collapse;
+    margin: 0 auto;
   }
   
   .sessions-table th,
   .sessions-table td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: center;
+    text-align: left;
   }
   
   .sessions-table th {
@@ -40,17 +31,29 @@
     background-color: #f9f9f9;
   }
   
-  .cancel-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
+  button {
+    margin: 0 5px;
     padding: 5px 10px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
-  .cancel-btn:hover {
-    background-color: #c0392b;
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: green;
+    text-align: center;
   }
   

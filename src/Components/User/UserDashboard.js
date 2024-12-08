@@ -62,12 +62,7 @@ function UserDashboard() {
           >
             Support Groups
           </li>
-          <li
-            className={activeComponent === 'MySessions' ? 'active' : ''}
-            onClick={() => setActiveComponent('MySessions')}
-          >
-            My Scheduled Sessions
-          </li>
+
         </ul>
       </div>
       <div className={`main-content ${isSidebarVisible ? '' : 'expanded'}`}>

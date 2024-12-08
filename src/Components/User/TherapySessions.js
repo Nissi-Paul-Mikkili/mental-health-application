@@ -8,6 +8,7 @@ function TherapySessions() {
   const [therapistName, setTherapistName] = useState('');
   const [sessionTime, setSessionTime] = useState(null);
   const [therapists, setTherapists] = useState([]);
+  const [message, setMessage] = useState({ text: '', type: '' });
 
   useEffect(() => {
     const fetchTherapists = async () => {
@@ -16,29 +17,45 @@ function TherapySessions() {
         setTherapists(response.data);
       } catch (error) {
         console.error('Error fetching therapists:', error);
+        setMessage({ text: 'Failed to load therapists.', type: 'error' });
       }
     };
     fetchTherapists();
   }, []);
 
-  const handleSchedule = (e) => {
+  const handleSchedule = async (e) => {
     e.preventDefault();
+
     if (!therapistName || !sessionTime) {
-      alert('Please fill out all fields.');
+      setMessage({ text: 'Please fill out all fields.', type: 'error' });
       return;
     }
-    const newSession = { id: Date.now(), therapistName, sessionTime };
-    const currentSessions = JSON.parse(localStorage.getItem('therapySessions')) || [];
-    localStorage.setItem('therapySessions', JSON.stringify([...currentSessions, newSession]));
 
-    setTherapistName('');
-    setSessionTime(null);
-    alert('Therapy session scheduled successfully!');
+    const newSession = {
+      clientName: 'nissi', // Replace with logged-in user's name
+      sessionTime,
+      status: 'PENDING',
+      assignedTherapist: therapistName,
+    };
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/sessions', newSession);
+      setMessage({ text: 'Therapy session scheduled successfully!', type: 'success' });
+      console.log(response.data); // For debugging
+      setTherapistName('');
+      setSessionTime(null);
+    } catch (error) {
+      console.error('Error scheduling session:', error);
+      setMessage({ text: 'Failed to schedule session.', type: 'error' });
+    }
   };
 
   return (
     <div className="therapy-sessions-container">
       <h1 className="page-title">Schedule Your Therapy Session</h1>
+      {message.text && (
+        <p className={`message ${message.type}`}>{message.text}</p>
+      )}
       <form onSubmit={handleSchedule} className="schedule-form">
         <div className="form-group">
           <label>Therapist Name</label>

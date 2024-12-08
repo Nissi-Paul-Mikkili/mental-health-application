@@ -35,3 +35,102 @@
     background-color: #3700b3;
   }
   
+
+  /* AdminDashboard.css */
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background: linear-gradient(180deg, #4a90e2, #4fbcff);
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: relative;
+  }
+  
+  .sidebar.hidden {
+    width: 50px;
+    padding: 10px 5px;
+  }
+  
+  .navbar-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar.hidden .navbar-title {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar ul li:hover,
+  .sidebar ul li.active {
+    background: #ffcc00;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  .main-content {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+  }
+  
+  .main-content.expanded {
+    width: 100%;
+  }
+  
+  .toggle-symbol {
+    position: absolute;
+    top: 10px;
+    right: -25px;
+    background: #ffcc00;
+    color: #000;
+    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .toggle-symbol:hover {
+    background: #e1b612;
+    transform: scale(1.1);
+  }
+  
+
