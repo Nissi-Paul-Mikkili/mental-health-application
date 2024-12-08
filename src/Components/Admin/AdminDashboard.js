@@ -32,6 +32,12 @@ function AdminDashboard() {
         </span>
         <h2 className="navbar-title">Admin Navigation</h2>
         <ul>
+        <li
+            className={activeComponent === 'Profile' ? 'active' : ''}
+            onClick={() => setActiveComponent('Profile')}
+          >
+            Profile
+          </li>
           <li
             className={activeComponent === 'ManageSessions' ? 'active' : ''}
             onClick={() => setActiveComponent('ManageSessions')}
@@ -44,12 +50,7 @@ function AdminDashboard() {
           >
             Manage Users
           </li>
-          <li
-            className={activeComponent === 'Profile' ? 'active' : ''}
-            onClick={() => setActiveComponent('Profile')}
-          >
-            Profile
-          </li>
+ 
         </ul>
       </div>
       <div className={`main-content ${isSidebarVisible ? '' : 'expanded'}`}>
