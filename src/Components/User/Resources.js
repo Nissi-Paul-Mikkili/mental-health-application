@@ -9,7 +9,7 @@ function Resources() {
 
       <div className="resource-box">
         <a
-          href="https://www.youtube.com/watch?v=cMulQrRnwtc"
+          href="https://www.youtube.com/watch?v=tybOi4hjZFQ"
           target="_blank"
           rel="noopener noreferrer"
         >
